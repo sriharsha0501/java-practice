@@ -10,11 +10,19 @@ public class AddAmountDAO
 	{
 		try
 		{
+			//geting connection object
 			Connection con = DBConnection.getCon();
+			
+			//preparing statement
 			PreparedStatement ps=con.prepareStatement("insert into amount57 values(?,?,?)");
+			
+			// setting attributes to prepare statement
 			ps.setInt(1, ab.getAmount());
+			
 			ps.setString(2, ab.getName());
 			ps.setInt(3, ab.getBalance());
+			
+			//executing query
 			k=ps.executeUpdate();
 			
 		}catch (Exception e) {
